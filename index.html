@@ -5,63 +5,459 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Derrick McCloud – Alabama State Senator District 28</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .issue-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .issue-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
-    <header class="bg-blue-900 text-white py-12 text-center flex items-center justify-center space-x-4">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Flag_of_the_United_States_%28DDD-F-416E_specifications%29.svg/330px-Flag_of_the_United_States_%28DDD-F-416E_specifications%29.svg.png" alt="US Flag" class="h-12">
-        <div>
-            <h1 class="text-5xl font-bold">Derrick McCloud</h1>
-            <p class="text-2xl mt-2">Alabama State Senator District 28</p>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation Menu -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl font-bold text-blue-900">Derrick McCloud</span>
+                    <span class="text-gray-600">for Alabama</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-blue-900 font-semibold transition">About Me</a>
+                    <a href="#issues" class="text-gray-700 hover:text-blue-900 font-semibold transition">On The Issues</a>
+                    <a href="#support" class="bg-red-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700 transition">Donate</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-900">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#about" class="block py-2 text-gray-700 hover:text-blue-900 font-semibold">About Me</a>
+                <a href="#issues" class="block py-2 text-gray-700 hover:text-blue-900 font-semibold">On The Issues</a>
+                <a href="#support" class="block py-2 text-red-600 hover:text-red-700 font-semibold">Donate</a>
+            </div>
         </div>
-        <img src="https://cdn.britannica.com/28/5428-050-62B83A98/flag-Republic-of-Alabama-sword-state-liberty-1895.jpg" alt="Alabama Flag" class="h-12">
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="gradient-bg text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute transform rotate-45 -right-20 -top-20 w-96 h-96 bg-white rounded-full"></div>
+            <div class="absolute transform -rotate-45 -left-20 -bottom-20 w-96 h-96 bg-white rounded-full"></div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10 flex items-center justify-center space-x-6">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Flag_of_the_United_States_%28DDD-F-416E_specifications%29.svg/330px-Flag_of_the_United_States_%28DDD-F-416E_specifications%29.svg.png" alt="US Flag" class="h-16 shadow-lg">
+            <div>
+                <h1 class="text-6xl font-bold mb-2">Derrick McCloud</h1>
+                <p class="text-3xl mb-2">Alabama State Senator</p>
+                <p class="text-2xl font-light">District 28</p>
+                <p class="text-xl mt-4 italic">"Faith, Family, Freedom"</p>
+            </div>
+            <img src="https://cdn.britannica.com/28/5428-050-62B83A98/flag-Republic-of-Alabama-sword-state-liberty-1895.jpg" alt="Alabama Flag" class="h-16 shadow-lg">
+        </div>
     </header>
-    <main class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg my-8">
-        <section class="mb-8 text-center">
-            <img src="/me.jpg" alt="Derrick McCloud" class="mx-auto rounded-lg shadow-md mb-4">
-            <p class="text-lg leading-relaxed">
-                Serving Alabama's 28th Senate District, Derrick McCloud fights for local resources, families, and communities. Committed to agriculture, healthcare, tourism, and more, he pledges to put District 28 first.
-            </p>
+
+    <main class="max-w-6xl mx-auto px-4">
+        <!-- About Me Section -->
+        <section id="about" class="py-16">
+            <div class="bg-white shadow-xl rounded-lg p-8 md:p-12">
+                <h2 class="text-4xl font-bold mb-8 text-blue-900 text-center border-b-4 border-red-600 pb-4 inline-block">About Me</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center mt-8">
+                    <div>
+                        <img src="/me.jpg" alt="Derrick McCloud" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <div class="space-y-4">
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            <span class="text-2xl font-bold text-blue-900">Derrick McCloud</span> is a lifelong resident of Alabama's 28th Senate District, dedicated to preserving the values that make our community strong: faith, family, and freedom.
+                        </p>
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            As your State Senator, Derrick has fought tirelessly to protect conservative principles in Montgomery. He believes in limited government, personal responsibility, and the fundamental rights enshrined in our Constitution.
+                        </p>
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            Derrick understands the challenges facing hardworking Alabama families because he's lived them. From supporting our farmers and small business owners to standing up for our veterans and law enforcement, he puts District 28 first every single day.
+                        </p>
+                        <div class="bg-blue-50 border-l-4 border-blue-900 p-4 mt-6">
+                            <p class="text-lg font-semibold text-blue-900">"I'm committed to fighting for the conservative values that built this nation and protecting the Alabama way of life for future generations."</p>
+                            <p class="text-right text-gray-600 mt-2">– Derrick McCloud</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 mt-12">
+                    <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+                        <div class="text-4xl font-bold text-blue-900">15+</div>
+                        <div class="text-gray-700 mt-2">Years of Community Service</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-red-50 to-red-100 rounded-lg">
+                        <div class="text-4xl font-bold text-red-700">100%</div>
+                        <div class="text-gray-700 mt-2">Conservative Voting Record</div>
+                    </div>
+                    <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+                        <div class="text-4xl font-bold text-blue-900">7</div>
+                        <div class="text-gray-700 mt-2">Key Senate Committees</div>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section class="mb-8 text-center">
-            <h2 class="text-3xl font-semibold mb-4 text-blue-900">Support the Campaign</h2>
-            <a href="#" class="bg-red-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700">Donate Now</a>
+
+        <!-- Support Section -->
+        <section id="support" class="py-16">
+            <div class="bg-gradient-to-r from-red-600 to-red-700 text-white shadow-xl rounded-lg p-12 text-center">
+                <h2 class="text-4xl font-bold mb-4">Support the Campaign</h2>
+                <p class="text-xl mb-8">Your contribution helps us fight for conservative values in Montgomery and protect the Alabama way of life.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#" class="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-lg">Donate Now</a>
+                    <a href="#" class="bg-blue-900 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition shadow-lg">Volunteer</a>
+                    <a href="#" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-red-600 transition">Get Yard Sign</a>
+                </div>
+            </div>
         </section>
-        <section>
-            <h2 class="text-3xl font-semibold mb-6 text-blue-900">Key Issues and Committees</h2>
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-2xl font-bold">Agriculture, Conservation and Forestry Committee</h3>
-                    <p>Supporting sustainable farming and environmental protection.</p>
+
+        <!-- On The Issues Section -->
+        <section id="issues" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-blue-900 border-b-4 border-red-600 pb-4 inline-block">On The Issues</h2>
+                <p class="text-xl text-gray-600 mt-4">Conservative Solutions for Alabama Families</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Agriculture Issue Card -->
+                <div class="issue-card bg-white shadow-lg rounded-lg p-8 border-l-4 border-green-600">
+                    <div class="flex items-start">
+                        <div class="bg-green-100 rounded-full p-4 mr-6">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-3">Agriculture, Conservation & Forestry</h3>
+                            <p class="text-gray-700 mb-4 text-lg">Alabama's agricultural heritage is the backbone of our economy and our way of life. We must protect our farmers and rural communities from government overreach.</p>
+                            <div class="bg-gray-50 rounded-lg p-6 space-y-3">
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Reduce Regulatory Burdens:</strong> Cut red tape that strangles family farms and makes it harder for farmers to make a living. Washington bureaucrats shouldn't dictate how Alabama farmers run their land.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Property Rights Protection:</strong> Defend farmers' constitutional right to use their land without excessive government interference. Your land, your choice.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Oppose Federal Land Grabs:</strong> Fight against federal overreach and environmental extremism that threatens Alabama's forestry and agricultural industries.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Support Market Solutions:</strong> Promote free-market approaches to conservation that reward good stewardship without mandates or government control.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold">Finance and Taxation General Fund Committee</h3>
-                    <p>Managing state budgets and fair taxation.</p>
+
+                <!-- Finance and Taxation Card -->
+                <div class="issue-card bg-white shadow-lg rounded-lg p-8 border-l-4 border-blue-600">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 rounded-full p-4 mr-6">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-3">Finance & Taxation</h3>
+                            <p class="text-gray-700 mb-4 text-lg">Hardworking Alabamians deserve to keep more of what they earn. We need fiscal responsibility in Montgomery, not more taxes and wasteful spending.</p>
+                            <div class="bg-gray-50 rounded-lg p-6 space-y-3">
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>No New Taxes:</strong> Fight any attempt to raise taxes on Alabama families and businesses. We have a spending problem, not a revenue problem.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Balanced Budget:</strong> Require state government to live within its means, just like Alabama families do. No deficit spending, no fiscal gimmicks.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Tax Relief for Working Families:</strong> Support eliminating the state grocery tax and reducing the tax burden on small businesses and working families.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Government Accountability:</strong> Demand transparency in how taxpayer dollars are spent and eliminate wasteful programs and duplicate agencies.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Attract Business:</strong> Keep Alabama competitive with low taxes and sensible regulations to create jobs and opportunity.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold">Healthcare Committee</h3>
-                    <p>Improving access to quality healthcare.</p>
+
+                <!-- Healthcare Card -->
+                <div class="issue-card bg-white shadow-lg rounded-lg p-8 border-l-4 border-red-600">
+                    <div class="flex items-start">
+                        <div class="bg-red-100 rounded-full p-4 mr-6">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-3">Healthcare</h3>
+                            <p class="text-gray-700 mb-4 text-lg">Healthcare decisions belong between patients and doctors, not government bureaucrats. We need free-market solutions that improve access and reduce costs.</p>
+                            <div class="bg-gray-50 rounded-lg p-6 space-y-3">
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Oppose Socialized Medicine:</strong> Stand firmly against government-run healthcare schemes that limit choices and reduce quality of care.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Support Rural Healthcare:</strong> Work to keep rural hospitals open and ensure District 28 families have access to quality care close to home.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Protect Life:</strong> Defend the sanctity of life from conception and support pregnancy resource centers that help mothers choose life.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Market Competition:</strong> Promote competition and transparency in healthcare pricing to drive down costs and improve quality.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Medical Freedom:</strong> Protect patients' and doctors' rights to make healthcare decisions without government mandates or interference.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold">Tourism Committee</h3>
-                    <p>Boosting local economy through tourism.</p>
+
+                <!-- Tourism Card -->
+                <div class="issue-card bg-white shadow-lg rounded-lg p-8 border-l-4 border-yellow-600">
+                    <div class="flex items-start">
+                        <div class="bg-yellow-100 rounded-full p-4 mr-6">
+                            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-3">Tourism & Economic Development</h3>
+                            <p class="text-gray-700 mb-4 text-lg">District 28's natural beauty and rich history are economic assets we must promote. Tourism creates jobs and prosperity without raising taxes.</p>
+                            <div class="bg-gray-50 rounded-lg p-6 space-y-3">
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Promote Alabama Tourism:</strong> Market our state's natural beauty, historic sites, and cultural heritage to attract visitors and create jobs.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Support Small Business:</strong> Cut regulations and fees that burden mom-and-pop businesses, restaurants, and tourism operators.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Preserve Heritage:</strong> Protect our historical sites and tell the complete story of Alabama's rich history, including our Confederate heritage.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Local Control:</strong> Ensure tourism development decisions are made locally, not dictated by Montgomery bureaucrats.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold">Transportation and Energy Committee</h3>
-                    <p>Enhancing infrastructure and energy solutions.</p>
+
+                <!-- Transportation and Energy Card -->
+                <div class="issue-card bg-white shadow-lg rounded-lg p-8 border-l-4 border-purple-600">
+                    <div class="flex items-start">
+                        <div class="bg-purple-100 rounded-full p-4 mr-6">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-3">Transportation & Energy</h3>
+                            <p class="text-gray-700 mb-4 text-lg">Good roads and reliable energy are essential for economic growth. We need practical infrastructure solutions and energy independence, not Green New Deal fantasies.</p>
+                            <div class="bg-gray-50 rounded-lg p-6 space-y-3">
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Fix Our Roads:</strong> Prioritize road maintenance and infrastructure improvements in District 28 with existing resources before considering any new taxes.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Energy Independence:</strong> Support Alabama's oil, gas, and coal industries that provide good-paying jobs and affordable energy.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Oppose Green New Deal:</strong> Reject radical environmental policies that would kill jobs, raise energy costs, and hurt working families.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>All-of-the-Above Energy:</strong> Support diverse energy sources including traditional fuels and new technologies without government mandates or subsidies.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Rural Broadband:</strong> Expand high-speed internet access to rural areas through private investment and limited, targeted public-private partnerships.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold">Veterans, Military Affairs, and Public Safety Committee</h3>
-                    <p>Honoring veterans and ensuring public safety.</p>
+
+                <!-- Veterans and Public Safety Card -->
+                <div class="issue-card bg-white shadow-lg rounded-lg p-8 border-l-4 border-indigo-600">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-100 rounded-full p-4 mr-6">
+                            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-3">Veterans, Military Affairs & Public Safety</h3>
+                            <p class="text-gray-700 mb-4 text-lg">We must honor those who served, support our military families, and back the blue. Law and order are the foundation of a free society.</p>
+                            <div class="bg-gray-50 rounded-lg p-6 space-y-3">
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Honor Our Veterans:</strong> Ensure Alabama veterans receive the benefits, healthcare, and recognition they've earned through their service.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Back the Blue:</strong> Stand with law enforcement 100% and reject efforts to defund or demonize police. Our officers deserve our support and respect.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Tough on Crime:</strong> Support mandatory minimum sentences for violent criminals and oppose soft-on-crime policies that endanger our communities.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Second Amendment Rights:</strong> Defend every Alabamian's constitutional right to keep and bear arms without infringement or red flag laws.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Support Military Bases:</strong> Fight to protect Alabama's military installations and the thousands of jobs they provide.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Border Security:</strong> Support securing our national borders and enforcing immigration laws to protect American jobs and public safety.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold">Joint Legislative Committee on State Parks</h3>
-                    <p>Preserving and developing state parks.</p>
+
+                <!-- State Parks Card -->
+                <div class="issue-card bg-white shadow-lg rounded-lg p-8 border-l-4 border-teal-600">
+                    <div class="flex items-start">
+                        <div class="bg-teal-100 rounded-full p-4 mr-6">
+                            <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-3">State Parks & Recreation</h3>
+                            <p class="text-gray-700 mb-4 text-lg">Our state parks are treasures that provide recreation for families and preserve Alabama's natural beauty for future generations.</p>
+                            <div class="bg-gray-50 rounded-lg p-6 space-y-3">
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Preserve and Improve:</strong> Maintain and enhance Alabama's state parks as family-friendly destinations that celebrate our outdoor heritage.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Self-Sufficiency:</strong> Ensure state parks operate efficiently and, where possible, generate revenue through user fees rather than taxpayer subsidies.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Hunting and Fishing Access:</strong> Protect traditional outdoor activities and ensure Alabama families can enjoy hunting, fishing, and recreation on public lands.</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-red-600 font-bold mr-3">✓</span>
+                                    <p class="text-gray-700"><strong>Balanced Approach:</strong> Promote conservation that respects property rights and rejects environmental extremism that locks up land from productive use.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16">
+            <div class="bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-xl rounded-lg p-12 text-center">
+                <h2 class="text-4xl font-bold mb-4">Join the Fight for Alabama's Future</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">District 28 deserves a senator who will stand up to liberal policies, protect our values, and fight for hardworking families. Together, we can keep Alabama strong.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#support" class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition shadow-lg">Donate Today</a>
+                    <a href="#" class="bg-white text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-lg">Sign Up for Updates</a>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="bg-blue-900 text-white py-4 text-center">
-        <p>&copy; 2025 Derrick McCloud Campaign</p>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-6">
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Derrick McCloud</h3>
+                    <p class="text-blue-200">Alabama State Senator<br>District 28</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="#about" class="block text-blue-200 hover:text-white transition">About Me</a>
+                        <a href="#issues" class="block text-blue-200 hover:text-white transition">On The Issues</a>
+                        <a href="#support" class="block text-blue-200 hover:text-white transition">Support</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Connect</h3>
+                    <p class="text-blue-200 mb-3">Stay informed about the campaign</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-800 p-3 rounded-full hover:bg-blue-700 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+                        </a>
+                        <a href="#" class="bg-blue-800 p-3 rounded-full hover:bg-blue-700 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 pt-6 text-center text-blue-200">
+                <p>&copy; 2025 Derrick McCloud Campaign. All rights reserved.</p>
+                <p class="mt-2 text-sm">Paid for by Friends of Derrick McCloud</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
